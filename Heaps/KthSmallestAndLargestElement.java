@@ -55,7 +55,5 @@ class KthSmallestAndLargestElement{
 		}
 
 		System.out.println("Kth Smallest Element : " + maxHeap.peek());
-
-
 	}
 }
