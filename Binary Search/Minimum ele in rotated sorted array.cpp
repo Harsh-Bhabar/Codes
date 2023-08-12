@@ -17,11 +17,18 @@ public:
 			return nums[l];
 		}
 
-		while (l < r)
+		while (l <= r)
 		{
 			int mid = l + (r - l) / 2;
+			int prev = (mid - 1 + n) % n;
+			int next = (mid + 1) % n;
+			// min ele will always be smaller than its neightbor
+			if (nums[prev] >= nums[mid] && nums[mid] <= nums[next])
+			{
+				return nums[mid];
+			}
 			// checking for sorted array, min will always be in unsorted
-			if (nums[r] < nums[mid])
+			if (nums[r] <= nums[mid])
 			{
 				l = mid + 1;
 			}
@@ -31,6 +38,6 @@ public:
 			}
 		}
 
-		return nums[l];
+		return 0;
 	}
 };
