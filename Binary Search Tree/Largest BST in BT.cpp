@@ -1,72 +1,55 @@
-/**
- * Definition for a binary tree node.
- * struct TreeNode {
- *     int val;
- *     TreeNode *left;
- *     TreeNode *right;
- *     TreeNode() : val(0), left(nullptr), right(nullptr) {}
- *     TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
- *     TreeNode(int x, TreeNode *left, TreeNode *right) : val(x), left(left), right(right) {}
- * };
- */
-
 class OurNode
 {
 public:
-	int sum;
 	int size;
-	int maxval;
-	int minval;
-	OurNode(int sum, int size, int maxval, int minval)
+	int maxNode;
+	int minNode;
+	OurNode(int size, int maxNode, int minNode)
 	{
-		this->sum = sum;
 		this->size = size;
-		this->maxval = maxval;
-		this->minval = minval;
+		this->maxNode = maxNode;
+		this->minNode = minNode;
 	}
 };
 
 class Solution
 {
 public:
-	int maxsum = 0;
+	/*You are required to complete this method */
+	// Return the size of the largest sub-tree which is also a BST
 
-	OurNode *solve(TreeNode *root)
+	OurNode solve(Node *root)
 	{
 		if (!root)
 		{
-			return new OurNode(0, 0, INT_MIN, INT_MAX);
+			return OurNode(0, INT_MIN, INT_MAX); // passing opposite
 		}
-		auto left = solve(root->left);
-		auto right = solve(root->right);
 
-		// for valid BST -> largest < root < smallest
-		if (left->maxval < root->val && root->val < right->minval)
+		OurNode left = solve(root->left);
+		OurNode right = solve(root->right);
+
+		// valid bst
+		if (left.maxNode < root->data && root->data < right.minNode)
 		{
-
-			maxsum = max(maxsum, root->val + left->sum + right->sum);
-
-			return new OurNode(
-				root->val + left->sum + right->sum,
-				1 + left->size + right->size,
-				max(root->val, right->maxval),
-				min(root->val, left->minval));
+			return OurNode(
+				1 + left.size + right.size,
+				max(root->data, right.maxNode),
+				min(root->data, left.minNode));
 		}
 
 		else
 		{
-			return new OurNode(0, max(left->size, right->size), INT_MAX, INT_MIN);
+			return OurNode(max(left.size, right.size), INT_MAX, INT_MIN);
 		}
 	}
 
-	int maxSumBST(TreeNode *root)
+	int largestBst(Node *root)
 	{
+		// postorder
 		if (!root)
 		{
 			return 0;
 		}
-		OurNode *ans = solve(root);
-		// cout<<ans->size; // this will give us the max size of BST
-		return maxsum;
+		return solve(root).size;
 	}
 };
