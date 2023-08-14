@@ -26,6 +26,11 @@ public:
 			return NULL;
 		}
 
+		//3 cases -
+		// 1. when both lies on left 
+		// 2. when both lies on right
+		// 3. one left one right
+
 		int small = min(p->val, q->val);
 		int large = max(p->val, q->val);
 
