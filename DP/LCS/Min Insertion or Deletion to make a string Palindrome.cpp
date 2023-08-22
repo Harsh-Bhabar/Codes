@@ -6,7 +6,7 @@ public:
 		int n = s.size();
 
 		string t = s;
-		reverse(t.begin(), t.end());
+		reverse(t.begin(), t.end()); // LONGEST PALINDROMIC SUBSEQ
 
 		vector<vector<int>> dp(n + 1, vector<int>(n + 1, 0));
 
