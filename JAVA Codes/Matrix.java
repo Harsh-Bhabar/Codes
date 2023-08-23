@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Matrix {
@@ -9,6 +8,7 @@ public class Matrix {
         String b = sc.nextLine();
 		int len = sol.longestCommonSubsequence(a, b);
 		System.out.println(len);
+        sc.close();
 	}
 }
 
