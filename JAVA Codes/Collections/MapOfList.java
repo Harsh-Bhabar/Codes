@@ -29,6 +29,8 @@ public class MapOfList {
 
 		map.get(10).add(1000);
 
+		System.out.println(map.get(1000));
+
 		System.out.println(map);
 }
 

@@ -49,5 +49,8 @@ public class CollecitonsClass {
 
 		System.out.println(students);
 
+		Collections.reverse(nums);
+		System.out.println(nums);
+
 	}
 }
