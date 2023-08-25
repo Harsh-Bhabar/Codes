@@ -1,7 +1,7 @@
 package Flood_Fill_BFS_DFS;
 import java.util.*;
 
-public class Number_Of_Provinces_BFS {
+public class Number_of_provinces_BFS_DFS {
 	
 }
 
@@ -17,6 +17,15 @@ class Solution {
                     visited[neighbor] = true;
                     q.offer(neighbor);
                 }
+            }
+        }
+    }
+
+    public void DFS(int i, ArrayList<ArrayList<Integer>> adj, boolean[] visited){
+        visited[i] = true;
+        for(int neighbor : adj.get(i)){
+            if(visited[neighbor] == false){
+                DFS(neighbor, adj, visited);
             }
         }
     }
@@ -46,11 +55,10 @@ class Solution {
         for(int i=0; i<V; i++){
             if(!visited[i]){
                 cnt++;
-                BFS(i, adj, visited);
+                // BFS(i, adj, visited);
+                DFS(i, adj, visited);
             }
         }
-
-        System.out.println(adj);
  
         return cnt;
     }
