@@ -52,6 +52,14 @@ public class ArrayListColl {
 			System.out.println(it.next());
 		}
 
+		ArrayList<Integer> nnums = new ArrayList<>(256);
+		for(int i=0; i<256; i++){
+			nnums.add(0);
+		}
+		nnums.set('a', 5);
+		nnums.set('a', nnums.get('a')+1);
+				System.out.println(nnums);
+
 	}
 	
 }
