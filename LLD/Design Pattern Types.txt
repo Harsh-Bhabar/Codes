@@ -1,0 +1,93 @@
+Low-level design patterns are specific solutions to common programming problems that arise during the implementation phase of software development. These patterns provide guidance on structuring code, improving code organization, and promoting maintainability. Here are some commonly used low-level design patterns:
+
+1. **Singleton Pattern**: 
+
+Ensures that a class has only one instance 
+and provides a global point of access to that instance. 
+It is often used for managing resources that should be shared across the application.
+
+2. **Factory Method Pattern**: 
+
+Defines an interface for creating objects, 
+but allows subclasses to decide which class to instantiate. 
+This pattern is useful when you want to delegate the 
+responsibility of creating objects to subclasses.
+
+3. **Abstract Factory Pattern**: 
+
+Provides an interface for creating families of 
+related or dependent objects without specifying their concrete classes. 
+It's used when you need to create multiple related objects together.
+
+4. **Builder Pattern**: 
+
+Separates the construction of a complex object from its representation, 
+allowing the same construction process to create different representations. 
+It's useful for creating objects with a large number of configuration options.
+
+5. **Prototype Pattern**: 
+
+Creates new objects by copying an existing object, known as the prototype. 
+It's used when creating a new object from scratch is inefficient, 
+and copying an existing object is more suitable.
+
+6. **Adapter Pattern**: 
+
+Allows classes with incompatible interfaces to work together. 
+It converts the interface of one class into another interface that clients expect.
+
+7. **Decorator Pattern**: 
+
+Allows behavior to be added to an individual object, 
+either statically or dynamically, without affecting the behavior 
+of other objects from the same class.
+
+8. **Facade Pattern**: 
+
+Provides a unified interface to a set of interfaces in a subsystem, 
+simplifying the usage of complex systems by clients.
+
+9. **Proxy Pattern**: 
+
+Provides a surrogate or placeholder for another object to control access to it. 
+It can be used for various purposes, such as lazy initialization, access control, and logging.
+
+10. **Observer Pattern**: 
+
+Defines a one-to-many relationship between objects, 
+so that when one object changes state, 
+all its dependents are notified and updated automatically.
+
+11. **Command Pattern**: 
+
+Encapsulates a request as an object, 
+thereby allowing for parameterizing clients with different requests, 
+queuing requests, and logging requests.
+
+12. **Iterator Pattern**: 
+
+Provides a way to access elements of a collection 
+sequentially without exposing its underlying representation.
+
+13. **Strategy Pattern**: 
+
+Defines a family of algorithms, 
+encapsulates each one, and makes them interchangeable. 
+This allows a client to choose an algorithm from a family of algorithms at runtime.
+
+14. **Template Method Pattern**:
+
+Defines the structure of an algorithm in the superclass 
+but allows subclasses to override specific 
+steps of the algorithm without changing its structure.
+
+15. **State Pattern**: 
+
+Allows an object to change its behavior when its internal state changes. 
+It appears as if the object is changing its class.
+
+16. **Memento Pattern**: 
+
+Allows the state of an object to be captured 
+and restored later without exposing its internal structure.
+
