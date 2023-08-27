@@ -1,0 +1,62 @@
+package LLD.HashMap_Implementation;
+
+public record THEORY() {
+	
+}
+
+
+A `HashMap` in Java is a data structure that stores key-value pairs
+and provides efficient retrieval, insertion, and deletion operations. 
+It is implemented using an array of buckets, 
+where each bucket can hold multiple key-value pairs. 
+Here's how it works internally:
+
+1. **Hashing**: 
+When you insert a key-value pair into a `HashMap`, 
+the key's `hashCode()` method is called to generate a hash code. 
+This hash code is used to determine the index (bucket) in the underlying array 
+where the key-value pair will be stored. 
+The goal of a good hash function is to evenly distribute keys across the available buckets.
+
+2. **Index Calculation**: 
+Once the hash code is obtained, 
+the index is calculated by performing a modulo operation on the hash code 
+with the number of buckets in the array. 
+This ensures that the index falls within the valid range of bucket indices.
+
+3. **Collision Handling**: 
+It's possible that two different keys generate the same hash code 
+or hash code after modulo results in the same index. 
+This is called a collision. 
+HashMap uses techniques like chaining or open addressing to handle collisions.
+
+   - **Chaining**: 
+   In chaining, each bucket contains a linked list (or other data structure) 
+   that holds all the key-value pairs that hash to the same index.
+    When a collision occurs, the new key-value pair is simply added to the linked list at that index.
+
+   - **Open Addressing**: 
+   In open addressing, when a collision occurs, 
+   the algorithm looks for the next available slot in the array to store the key-value pair.
+    There are several strategies for finding the next slot, 
+	such as linear probing, quadratic probing, and double hashing.
+
+4. **Load Factor**: 
+The `HashMap` also maintains a "load factor," 
+which determines when the underlying array should be resized. 
+When the number of elements in the `HashMap` 
+exceeds the product of the load factor and the current capacity, 
+the `HashMap` is resized and the key-value pairs are 
+rehashed and redistributed into the new array to maintain efficient performance.
+
+5. **Resizing**: 
+Resizing involves creating a new array with a larger number of buckets 
+and rehashing all the key-value pairs from the old array into the new array. 
+This process helps to keep the load factor within a certain range, 
+preventing too many collisions and ensuring efficient access times.
+
+In summary, 
+a `HashMap` in Java uses hashing to efficiently store and retrieve key-value pairs. 
+It uses an array of buckets to handle collisions, either through chaining or open addressing. 
+The load factor and resizing mechanisms ensure that the `HashMap` 
+maintains good performance characteristics as the number of elements grows.
