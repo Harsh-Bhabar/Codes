@@ -1,8 +1,3 @@
-package LLD.HashMap_Implementation;
-
-public record THEORY() {
-	
-}
 
 
 A `HashMap` in Java is a data structure that stores key-value pairs
