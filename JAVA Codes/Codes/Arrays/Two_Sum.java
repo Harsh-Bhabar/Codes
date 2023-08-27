@@ -1,6 +1,6 @@
 package Codes.Arrays;
 
-public class TwoSum {
+public class Two_Sum {
 	
 }
 
