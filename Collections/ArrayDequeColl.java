@@ -5,7 +5,7 @@ import java.util.Queue;
 
 public class ArrayDequeColl {
 	public static void main(String[] args) {
-		
+
 		ArrayDeque<Integer> dq = new ArrayDeque<>();
 
 		// INSERTION
